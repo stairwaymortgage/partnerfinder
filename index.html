@@ -1,0 +1,380 @@
+<title>NEXA Mortgage Pathfinder</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Researching NEXA Mortgage or NEXA Lending? A private evaluation that points mortgage professionals to the right team, mentor, and career path." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout concept: dark "navigator's instrument" — asymmetric hero pairing an editorial
+     serif headline against a precision brass compass over a faint topographic field;
+     everything else kept quiet so the instrument is the one bold moment. Committed dark. */
+  :root{
+    color-scheme: dark;
+    --field:#0e201c;          /* deep forest-ink ground */
+    --panel:#143029;          /* lifted surface */
+    --raise:#1b3d35;          /* interactive raise */
+    --ivory:#f1ead8;          /* warm paper text */
+    --sage:#9bb0a4;           /* muted secondary */
+    --muted:#7b958a;          /* quietest text */
+    --brass:#d8b26c;          /* primary metallic accent */
+    --brass-hi:#f0d79c;       /* sheen highlight */
+    --brass-lo:#a9823e;       /* sheen shadow */
+    --line:rgba(241,234,216,.12);
+    --line-2:rgba(241,234,216,.22);
+    --danger:#e8a08f;
+    --shadow:0 34px 90px rgba(0,0,0,.5);
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Hanken Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 760px at 76% 14%, #17332c 0%, rgba(23,51,44,0) 58%),
+      radial-gradient(900px 900px at 8% 96%, #12271f 0%, rgba(18,39,31,0) 60%),
+      var(--field);
+    background-attachment:fixed;
+    color:var(--ivory);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  button{font:inherit;color:inherit}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--brass);color:#14130c}
+  :focus-visible{outline:2px solid var(--brass-hi);outline-offset:3px;border-radius:3px}
+
+  .shell{max-width:1320px;margin:auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+
+  /* Disclosure / compliance bar */
+  .notice{border-bottom:1px solid var(--line);background:rgba(8,20,17,.55)}
+  .notice .shell{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;padding-block:11px;font-size:12.5px;color:var(--sage);text-align:center}
+  .notice strong{color:var(--ivory);font-weight:600}
+  .notice a{color:var(--brass-hi);font-weight:600;border-bottom:1px solid rgba(240,215,156,.4)}
+  .notice button{border:0;background:none;color:var(--muted);cursor:pointer;line-height:1;font-size:17px;padding:2px 6px}
+  .notice button:hover{color:var(--ivory)}
+
+  /* Header */
+  header.site{padding-block:22px}
+  header.site .shell{display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .mark{display:flex;align-items:baseline;gap:11px;font-family:var(--serif);font-size:19px;letter-spacing:-.01em}
+  .mark b{font-weight:600}
+  .mark i{font-style:normal;color:var(--brass);font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-family:var(--sans);font-weight:700;transform:translateY(-1px)}
+  .nudge{font-size:13px;color:var(--muted)}
+
+  /* Hero */
+  .hero{padding-block:clamp(26px,5vw,70px) clamp(40px,6vw,96px)}
+  .hero .shell{display:grid;grid-template-columns:minmax(320px,1fr) minmax(430px,1.04fr);gap:clamp(30px,5vw,76px);align-items:center}
+  .lede .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--brass);font-weight:600;margin:0 0 26px;letter-spacing:.01em}
+  .lede .eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--brass),transparent)}
+  .lede h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.1vw,82px);line-height:1.02;letter-spacing:-.025em;margin:0 0 24px;text-wrap:balance}
+  .lede h1 em{font-style:italic;color:var(--brass-hi)}
+  .lede p.dek{font-size:clamp(16px,1.5vw,19px);color:var(--sage);max-width:46ch;margin:0 0 32px}
+  .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+  .btn{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;border-radius:999px;padding:15px 26px;font-weight:700;font-size:15px;letter-spacing:.005em;background:linear-gradient(180deg,var(--brass-hi),var(--brass) 52%,var(--brass-lo));color:#17140b;box-shadow:0 14px 30px rgba(169,130,62,.3),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .2s ease,box-shadow .2s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(169,130,62,.4),inset 0 1px 0 rgba(255,255,255,.5)}
+  .btn.ghost{background:none;color:var(--ivory);box-shadow:none;border:1px solid var(--line-2);padding:14px 24px}
+  .btn.ghost:hover{border-color:var(--brass);background:rgba(216,178,108,.07);transform:translateY(-2px)}
+  .micro{font-size:13px;color:var(--muted);margin:26px 0 0;max-width:42ch;line-height:1.55}
+
+  /* Compass instrument */
+  .instrument{position:relative;width:100%;max-width:560px;margin-inline:auto;aspect-ratio:1}
+  .topo{position:absolute;inset:-6% ;border-radius:50%;background:
+      repeating-radial-gradient(circle at 50% 50%, rgba(216,178,108,.11) 0 1px, transparent 1px 22px);
+      -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 48%, transparent 76%);
+      mask-image:radial-gradient(circle at 50% 50%, #000 48%, transparent 76%);
+      opacity:.8}
+  .glow{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle,rgba(216,178,108,.2),rgba(155,176,164,.08) 45%,transparent 70%);filter:blur(6px)}
+  .dial{position:absolute;inset:4%;border-radius:50%;border:1px solid var(--line-2);
+      background:
+        radial-gradient(circle at 50% 36%, rgba(27,61,53,.9), rgba(14,32,28,.95) 70%);
+      box-shadow:var(--shadow),inset 0 1px 0 rgba(241,234,216,.08),inset 0 0 70px rgba(0,0,0,.5)}
+  .dial svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:33%;aspect-ratio:1;border-radius:50%;
+      background:radial-gradient(circle at 50% 35%, #1f463d, #0c1f1b);
+      border:1px solid rgba(216,178,108,.3);display:grid;place-items:center;text-align:center;padding:6%;z-index:3;
+      box-shadow:0 16px 36px rgba(0,0,0,.5),inset 0 1px 0 rgba(241,234,216,.1)}
+  .hub span{font-family:var(--serif);font-size:clamp(15px,2.1vw,21px);line-height:1.05;color:var(--ivory)}
+  .hub small{display:block;margin-top:6px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);font-weight:700}
+  .pt{position:absolute;width:30%;max-width:138px;aspect-ratio:1;transform:translate(-50%,-50%);
+      border-radius:50%;border:1px solid var(--line-2);background:rgba(20,48,41,.72);backdrop-filter:blur(3px);
+      color:var(--ivory);cursor:pointer;display:grid;place-items:center;text-align:center;padding:8%;
+      font-size:clamp(11px,1.35vw,13.5px);font-weight:600;line-height:1.2;z-index:4;
+      transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease}
+  .pt kbd{display:block;font:inherit;font-weight:700;font-size:9px;letter-spacing:.2em;color:var(--brass);margin-bottom:3px;text-transform:uppercase}
+  .pt:hover,.pt:focus-visible{background:linear-gradient(180deg,var(--brass-hi),var(--brass));color:#17140b;border-color:transparent;transform:translate(-50%,-50%) scale(1.07);box-shadow:0 14px 30px rgba(169,130,62,.4)}
+  .pt:hover kbd,.pt:focus-visible kbd{color:#5a4413}
+  .p-n{left:50%;top:1%}
+  .p-ne{left:91%;top:27%}
+  .p-se{left:91%;top:73%}
+  .p-s{left:50%;top:99%}
+  .p-sw{left:9%;top:73%}
+  .p-nw{left:9%;top:27%}
+  .caption{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);font-size:12px;color:var(--muted);letter-spacing:.02em;white-space:nowrap}
+
+  /* Section scaffold */
+  .section{padding-block:clamp(56px,7vw,104px);border-top:1px solid var(--line)}
+  .kicker{font-size:13px;color:var(--brass);font-weight:600;margin:0 0 16px}
+  .section h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.2vw,52px);line-height:1.04;letter-spacing:-.025em;margin:0 0 16px;max-width:17ch;text-wrap:balance}
+  .section .intro{color:var(--sage);font-size:17px;max-width:58ch;margin:0}
+
+  /* Library — editorial index, not identical cards */
+  .index{margin-top:clamp(34px,4vw,54px);border-top:1px solid var(--line)}
+  .entry{display:grid;grid-template-columns:52px 1fr auto;gap:clamp(14px,2.4vw,32px);align-items:baseline;
+      padding:22px 10px 22px 6px;border-bottom:1px solid var(--line);position:relative;transition:background .2s ease}
+  .entry:hover{background:rgba(216,178,108,.05)}
+  .entry .no{font-family:var(--serif);font-size:15px;color:var(--brass);font-variant-numeric:tabular-nums;padding-top:4px}
+  .entry .body h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2.3vw,26px);letter-spacing:-.015em;margin:0 0 5px;transition:color .2s ease}
+  .entry:hover .body h3{color:var(--brass-hi)}
+  .entry .body p{margin:0;color:var(--muted);font-size:14.5px;max-width:62ch}
+  .entry .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);font-weight:700;white-space:nowrap;padding-top:6px}
+  @media(max-width:620px){.entry{grid-template-columns:38px 1fr;gap:12px}.entry .tag{display:none}}
+
+  /* Invitation band */
+  .invite{margin-block:clamp(10px,2vw,22px)}
+  .invite .box{background:linear-gradient(135deg,var(--panel),#0c211c);border:1px solid var(--line-2);border-radius:26px;
+      padding:clamp(30px,5vw,62px);display:grid;grid-template-columns:1.3fr auto;gap:30px;align-items:center;box-shadow:var(--shadow)}
+  .invite h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.5vw,42px);letter-spacing:-.025em;line-height:1.06;margin:0 0 12px;max-width:20ch;text-wrap:balance}
+  .invite p{color:var(--sage);margin:0;max-width:52ch;font-size:16px}
+  @media(max-width:760px){.invite .box{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer.site{border-top:1px solid var(--line);padding-block:34px 44px;margin-top:clamp(40px,6vw,80px)}
+  footer.site .shell{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;align-items:flex-start}
+  footer.site p{margin:0;color:var(--muted);font-size:12.5px;max-width:62ch;line-height:1.6}
+  footer.site .links{display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px}
+  footer.site .links a{color:var(--ivory);font-weight:600;border-bottom:1px solid var(--line-2);padding-bottom:1px}
+  footer.site .links a:hover{color:var(--brass-hi);border-color:var(--brass)}
+
+  /* ---------- Modals (survey + topics) ---------- */
+  .modal{position:fixed;inset:0;background:rgba(6,16,13,.72);backdrop-filter:blur(4px);display:none;place-items:center;padding:20px;z-index:40;overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
+  .modal.open{display:grid}
+  .panel{background:linear-gradient(180deg,var(--panel),#0e241f);border:1px solid var(--line-2);border-radius:24px;width:min(680px,100%);max-height:calc(100dvh - 40px);padding:clamp(26px,4vw,40px);box-shadow:0 40px 120px rgba(0,0,0,.6);position:relative;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+  .close{position:absolute;right:16px;top:14px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+  .close:hover{color:var(--ivory)}
+  .qlabel{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brass)}
+  .progress{height:4px;background:rgba(241,234,216,.1);border-radius:4px;margin:16px 0 30px;overflow:hidden}
+  .progress span{display:block;background:linear-gradient(90deg,var(--brass-lo),var(--brass-hi));height:100%;width:25%;border-radius:4px;transition:width .35s ease}
+  .panel h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,36px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 24px;text-wrap:balance}
+  #topicBody{color:var(--sage)}
+  .choices{display:grid;gap:10px}
+  .choice{border:1px solid var(--line-2);background:rgba(241,234,216,.03);border-radius:13px;padding:15px 17px;text-align:left;cursor:pointer;color:var(--ivory);font-size:15px;transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+  .choice:hover{border-color:var(--brass);background:rgba(216,178,108,.08)}
+  .choice.selected{border-color:transparent;background:linear-gradient(180deg,var(--brass-hi),var(--brass));color:#17140b;font-weight:600;transform:scale(1.012);box-shadow:0 8px 20px rgba(169,130,62,.32)}
+  .choice.selected::after{content:'✓';float:right;font-weight:800}
+  .panel-actions{display:flex;justify-content:space-between;align-items:center;margin:0 0 22px;min-height:42px;padding:6px 0 12px;background:linear-gradient(180deg,var(--panel),rgba(20,48,41,0));position:sticky;top:-6px;z-index:4}
+  .back{border:0;background:none;color:var(--muted);cursor:pointer;font-size:14px;padding:6px 2px}
+  .back:hover{color:var(--ivory)}
+  .locked{display:none}.locked.show{display:block}
+  .locked p{color:var(--sage)}
+  .field-list{display:grid;gap:14px}
+  .field-list label{display:grid;gap:7px;font-size:12px;font-weight:700;color:var(--sage);letter-spacing:.06em}
+  .field-list input{width:100%;padding:14px 15px;border:1px solid var(--line-2);border-radius:12px;background:rgba(10,24,20,.6);color:var(--ivory);font:inherit;font-size:16px}
+  .field-list input::placeholder{color:var(--muted)}
+  .field-list input:focus{outline:2px solid rgba(216,178,108,.5);outline-offset:0;border-color:var(--brass)}
+  .calendar{display:grid;gap:10px}
+  .slot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line-2);border-radius:13px;background:rgba(241,234,216,.03);cursor:pointer;text-align:left;color:var(--ivory);transition:background .18s ease,border-color .18s ease}
+  .slot span{font-family:var(--serif);font-size:18px}
+  .slot small{color:var(--muted);font-family:var(--sans)}
+  .slot strong{color:var(--brass)}
+  .slot:hover,.slot.selected{border-color:var(--brass);background:rgba(216,178,108,.09)}
+
+  @media(max-width:940px){
+    .hero .shell{grid-template-columns:1fr}
+    .lede{text-align:center}
+    .lede .eyebrow{justify-content:center}
+    .lede p.dek,.micro{margin-inline:auto}
+    .cta-row{justify-content:center}
+    .instrument{max-width:440px;margin-top:20px}
+    .nudge{display:none}
+  }
+  @media(max-width:560px){
+    .instrument{max-width:330px}
+    .pt{font-size:10px;padding:7%}
+    .p-ne,.p-se{left:88%}
+    .p-sw,.p-nw{left:12%}
+    .caption{bottom:-30px}
+    .invite .box{padding:26px 22px}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(14px);animation:rise .9s cubic-bezier(.2,.65,.3,1) forwards}
+    .reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.18s}.reveal.d3{animation-delay:.28s}.reveal.d4{animation-delay:.4s}
+    .dial-in{opacity:0;transform:scale(.92) rotate(-8deg);animation:dialIn 1.1s cubic-bezier(.2,.7,.25,1) .1s forwards}
+    .needle-settle{transform-box:fill-box;transform-origin:center;animation:settle 1.4s cubic-bezier(.2,.8,.2,1) .3s both}
+    @keyframes rise{to{opacity:1;transform:none}}
+    @keyframes dialIn{to{opacity:1;transform:none}}
+    @keyframes settle{0%{transform:rotate(26deg)}60%{transform:rotate(-7deg)}100%{transform:rotate(0)}}
+  }
+</style>
+
+<div class="notice" id="notice">
+  <div class="shell">
+    <span>An independent educational and recruiting resource from a team operating under <strong>NEXA Mortgage, LLC</strong>. Looking for the corporate site? <a href="https://nexamortgage.com" target="_blank" rel="noreferrer">Visit NEXA Mortgage</a>.</span>
+    <button aria-label="Dismiss disclosure" onclick="document.getElementById('notice').remove()">&times;</button>
+  </div>
+</div>
+
+<header class="site">
+  <div class="shell">
+    <div class="mark"><b>NEXA Mortgage</b><i>Pathfinder</i></div>
+    <div class="nudge">Explore only what you came to find.</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="shell">
+      <div class="lede">
+        <p class="eyebrow reveal">A private evaluation for mortgage professionals</p>
+        <h1 class="reveal d1">Find the path that fits what you're <em>building</em>.</h1>
+        <p class="dek reveal d2">Explore the company, the teams, and the mentors behind NEXA &mdash; then let a few focused questions point you to the right next step.</p>
+        <div class="cta-row reveal d3">
+          <button class="btn" onclick="openEval()">Begin the private evaluation</button>
+          <button class="btn ghost" onclick="document.getElementById('research-library').scrollIntoView({behavior:'smooth'})">Read the research first</button>
+        </div>
+        <p class="micro reveal d4">Ten minutes of honest questions. The full team presentation follows your review.</p>
+      </div>
+
+      <div class="instrument">
+        <div class="topo" aria-hidden="true"></div>
+        <div class="glow" aria-hidden="true"></div>
+        <div class="dial dial-in" aria-hidden="true">
+          <svg viewBox="0 0 200 200" id="dialSvg" aria-hidden="true"></svg>
+        </div>
+        <div class="hub" aria-hidden="true"><div><span>Find your<br>path</span><small>NEXA research</small></div></div>
+
+        <nav aria-label="Explore NEXA Mortgage topics">
+          <button class="pt p-n"  onclick="openTopic('research')"><kbd>N</kbd>Researching NEXA</button>
+          <button class="pt p-ne" onclick="openTopic('career')"><kbd>NE</kbd>New to mortgage</button>
+          <button class="pt p-se" onclick="openTopic('opportunity')"><kbd>SE</kbd>Already licensed</button>
+          <button class="pt p-s"  onclick="openTopic('teams')"><kbd>S</kbd>Comparing teams</button>
+          <button class="pt p-sw" onclick="openTopic('reviews')"><kbd>SW</kbd>Referral partner</button>
+          <button class="pt p-nw" onclick="openEval()"><kbd>NW</kbd>Begin evaluation</button>
+        </nav>
+        <div class="caption">Choose a bearing to begin</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research-library">
+    <div class="shell">
+      <p class="kicker">The research library</p>
+      <h2>Start with the question you searched.</h2>
+      <p class="intro">Ten independent articles on NEXA Mortgage and NEXA Lending &mdash; written to help you ask better questions before you choose a team, a mentor, or a career path.</p>
+
+      <div class="index">
+        <a class="entry" href="articles/nexa-mortgage-is-now-nexa-lending.html"><span class="no">01</span><span class="body"><h3>NEXA Mortgage Is Now NEXA Lending</h3><p>What changed, and what the rebrand may mean for mortgage professionals.</p></span><span class="tag">Rebrand</span></a>
+        <a class="entry" href="articles/is-nexa-lending-the-same-company.html"><span class="no">02</span><span class="body"><h3>Is NEXA Lending the Same Company?</h3><p>A clear explanation for people seeing both names in search results.</p></span><span class="tag">Company</span></a>
+        <a class="entry" href="articles/nexa-mortgage-careers.html"><span class="no">03</span><span class="body"><h3>NEXA Mortgage Careers</h3><p>What loan officers should research beyond compensation.</p></span><span class="tag">Careers</span></a>
+        <a class="entry" href="articles/nexa-mortgage-opportunity.html"><span class="no">04</span><span class="body"><h3>The NEXA Mortgage Opportunity</h3><p>Different paths for different goals, experience levels, and needs.</p></span><span class="tag">Opportunity</span></a>
+        <a class="entry" href="articles/how-to-choose-a-nexa-team.html"><span class="no">05</span><span class="body"><h3>How to Choose a NEXA Team</h3><p>The questions to ask before choosing a team or mentor.</p></span><span class="tag">Teams</span></a>
+        <a class="entry" href="articles/how-to-choose-a-nexa-mentor.html"><span class="no">06</span><span class="body"><h3>How to Choose a NEXA Mentor</h3><p>How to weigh experience, coaching, accountability, and fit.</p></span><span class="tag">Mentors</span></a>
+        <a class="entry" href="articles/nexa-mortgage-reviews.html"><span class="no">07</span><span class="body"><h3>NEXA Mortgage Reviews</h3><p>How to read reviews and separate company from team experience.</p></span><span class="tag">Reviews</span></a>
+        <a class="entry" href="articles/why-loan-officers-change-companies.html"><span class="no">08</span><span class="body"><h3>Why Loan Officers Change Companies</h3><p>Why compensation alone rarely solves the real business problem.</p></span><span class="tag">Decisions</span></a>
+        <a class="entry" href="articles/realtors-nexa-loan-officers-referral-partners.html"><span class="no">09</span><span class="body"><h3>Realtors, Loan Officers &amp; Referral Partners</h3><p>What to consider when you explore a mortgage path.</p></span><span class="tag">Realtors</span></a>
+        <a class="entry" href="articles/what-new-loan-officers-need.html"><span class="no">10</span><span class="body"><h3>What New Loan Officers Need</h3><p>Why a platform, a plan, and a navigator are three different things.</p></span><span class="tag">Training</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="invite">
+    <div class="shell">
+      <div class="box">
+        <div>
+          <p class="kicker">Your answers shape the next step</p>
+          <h2>Not everyone needs the same opportunity.</h2>
+          <p>Tell us what you're looking for. We review every set of answers and invite the professionals who fit to the complete team presentation.</p>
+        </div>
+        <button class="btn" onclick="openEval()">Begin the private evaluation</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="shell">
+      <p>Independent educational and recruiting resource. Not the official corporate website of NEXA Mortgage, LLC. Team-specific information is provided after review. Verify current licensing, compensation, and program details directly with the appropriate parties.</p>
+      <div class="links">
+        <a href="https://nexamortgage.com" target="_blank" rel="noreferrer">Official NEXA website</a>
+        <a href="#top">Back to the compass</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<div class="modal" id="topicModal" role="dialog" aria-modal="true" aria-labelledby="topicTitle"><div class="panel"><button class="close" onclick="closeModal()" aria-label="Close">&times;</button><div class="qlabel">Explore this topic</div><h2 id="topicTitle"></h2><p id="topicBody"></p><div id="topicAction"></div></div></div>
+
+<div class="modal" id="evalModal" role="dialog" aria-modal="true" aria-labelledby="evalTitle"><div class="panel"><button class="close" onclick="closeModal()" aria-label="Close">&times;</button><div class="qlabel" id="stepLabel">Private evaluation &middot; 1 of 10</div><div class="progress"><span id="bar"></span></div><div class="panel-actions"><button class="back" id="backBtn" onclick="prevQuestion()">Back</button><button class="btn" id="nextBtn" onclick="nextQuestion()">Continue</button></div><div id="questionArea"></div><div class="locked" id="complete"><div class="qlabel">Review meeting reserved</div><h2>Thank you. We'll review your answers before the conversation.</h2><p>Your information has been recorded. We have provisionally reserved a conversation for the following week so we can review your answers beforehand. If the opportunity is not appropriate, we will cancel the meeting and let you know by email.</p><button class="btn" onclick="closeModal()">Return to the compass</button></div></div></div>
+
+<script>
+  /* Build the compass dial: concentric rings, degree ticks, cardinal marks, needle. */
+  (function(){
+    const svg=document.getElementById('dialSvg');if(!svg)return;
+    const NS='http://www.w3.org/2000/svg',c=100,ring='rgba(216,178,108,.30)',faint='rgba(241,234,216,.12)';
+    function el(n,a){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;}
+    svg.appendChild(el('circle',{cx:c,cy:c,r:94,fill:'none',stroke:ring,'stroke-width':.8}));
+    svg.appendChild(el('circle',{cx:c,cy:c,r:70,fill:'none',stroke:faint,'stroke-width':.8}));
+    svg.appendChild(el('circle',{cx:c,cy:c,r:52,fill:'none',stroke:'rgba(216,178,108,.18)','stroke-width':.8}));
+    for(let d=0;d<360;d+=3){
+      const major=(d%30===0),r1=major?82:87,r2=94,rad=(d-90)*Math.PI/180;
+      svg.appendChild(el('line',{
+        x1:c+r1*Math.cos(rad),y1:c+r1*Math.sin(rad),
+        x2:c+r2*Math.cos(rad),y2:c+r2*Math.sin(rad),
+        stroke:major?ring:faint,'stroke-width':major?1.1:.6,'stroke-linecap':'round'}));
+    }
+    // cardinal letters
+    const card=[['N',0],['E',90],['S',180],['W',270]];
+    card.forEach(([L,d])=>{const rad=(d-90)*Math.PI/180,r=63;
+      const t=el('text',{x:c+r*Math.cos(rad),y:c+r*Math.sin(rad)+3.5,'text-anchor':'middle',fill:'rgba(216,178,108,.55)','font-size':9,'font-family':'Hanken Grotesk, sans-serif','font-weight':700,'letter-spacing':1});
+      t.textContent=L;svg.appendChild(t);});
+    // needle
+    const g=el('g',{class:'needle-settle'});
+    g.appendChild(el('path',{d:'M100 38 L106 100 L100 108 L94 100 Z',fill:'url(#brassgrad)'}));
+    g.appendChild(el('path',{d:'M100 162 L106 100 L100 92 L94 100 Z',fill:'rgba(155,176,164,.5)'}));
+    const defs=el('defs',{});const lg=el('linearGradient',{id:'brassgrad',x1:0,y1:0,x2:0,y2:1});
+    lg.appendChild(el('stop',{offset:0,'stop-color':'#f0d79c'}));lg.appendChild(el('stop',{offset:1,'stop-color':'#a9823e'}));
+    defs.appendChild(lg);svg.appendChild(defs);svg.appendChild(g);
+    svg.appendChild(el('circle',{cx:c,cy:c,r:4,fill:'#f0d79c',stroke:'#17140b','stroke-width':.8}));
+  })();
+
+  const topics={
+    research:{title:'What is NEXA Mortgage?',body:'Start with the company-level questions: what NEXA is, how to find official information, and what to compare before choosing any team or mentor.',action:'openEval()'},
+    career:{title:'NEXA Mortgage careers',body:'Explore the mortgage industry, licensing, training, support, production, and the different stages a person may enter from.',action:'openEval()'},
+    opportunity:{title:'The opportunity',body:'Different people need different paths. Some are exploring referrals, some want a supported license path, and some want to build independent production.',action:'openEval()'},
+    teams:{title:'Teams and mentors',body:'A company name is only one part of the decision. Your goals, experience, desired handholding, leadership needs, and business plan all matter.',action:'openEval()'},
+    reviews:{title:'Reviews and questions',body:'Use reviews as a starting point—not the whole decision. Ask who the review is from, what role they had, and whether their experience matches what you need.',action:'openEval()'}
+  };
+  const supportOptions=['Training and handholding','Leads, marketing, and referral development','Technology and systems','Leadership and team-building support','Maximum independence','Sales and negotiation coaching','Lead-generation coaching','Custom content distribution'];
+  let q=0,answers={},contact={},slot='',calendarOpen=false;
+  function getQs(){const list=[
+    {id:'duration',title:'How long have you been looking into NEXA Mortgage, LLC?',opts:['Within the last week','Within the last 30 days','Within the last 90 days','More than 90 days','I’m not sure']},
+    {id:'role',title:'Which best describes what brings you here?',opts:['I’m considering entering mortgage','I’m already licensed or a loan officer','I’m interested in referral partnerships','I want to bring over a team','I’m just researching']},
+  ];if(answers.role==='I want to bring over a team'){list.push({id:'teamCount',title:'How many producing loan officers are currently on your team?',type:'text',placeholder:'Number of producing loan officers'});list.push({id:'teamStates',title:'In which states is your branch or team licensed?',type:'text',placeholder:'List the states'});list.push({id:'office',title:'Do you have a physical office address or operate from a home office?',opts:['A dedicated physical office','A home office','A combination of physical and home offices','I’m still deciding']})}list.push(
+    {id:'license',title:'Are you currently licensed or considering becoming licensed?',opts:['I am already licensed','I am studying or preparing to get licensed','I am considering it','I do not want to become licensed','I’m not sure yet']},
+    {id:'evaluation',title:'Are you evaluating teams, or have you already chosen one?',opts:['I’m still evaluating','I have chosen a team','I’m speaking with several people','I have not spoken with anyone yet','I’m not sure']},
+    {id:'mentor',title:'Are you evaluating which NEXA mentor you want as your guide and coach?',opts:['Yes, I’m comparing mentors','I have a mentor in mind','I have already chosen a mentor','No, I’m only researching','I’m not sure yet']},
+    {id:'needs',title:'What are you looking for from a team or mentor?',opts:[...supportOptions,'All of the above'],type:'multi'},
+    {id:'heldback',title:'What has been holding you back from moving forward?',opts:['I need more information','I’m comparing mentors or teams','I’m comfortable where I am','I’m concerned about losing important things from my current company','I’m not ready yet']}
+  );if(answers.heldback==='I’m concerned about losing important things from my current company'){list.push({id:'losses',title:'What are you most concerned about losing from your current company?',opts:[...supportOptions,'Upfront pre-approval and sales support','Back-end processing and closing support','Partners may not continue referring me','Losing a recognizable brand behind me','Compensation and benefits package','All of the above'],type:'multi'})}list.push(
+    {id:'urgency',title:'How soon are you looking to make a change?',opts:['As soon as I find the right fit','Within the next 30 days','Within the next 60–90 days','Later this year','I’m only researching right now']},
+    {id:'otherCompanies',title:'What other mortgage companies are you considering?',type:'text',placeholder:'Company names, if any'},
+    {id:'favorite',title:'What appeals to you most about the other companies you’re considering?',opts:['Compensation or earning potential','Brand recognition or company size','Technology and systems','Training and support','Leads or marketing resources','Independence and flexibility','Partners and referral relationships','Upfront pre-approval and sales support','Back-end processing and closing support','Compensation and benefits package','I’m not seriously considering another company'],hint:'Choose the one that matters most'},{id:'appeal',title:'What are the top three things that appeal to you about the NEXA Mortgage opportunity?',opts:['Training, sales, negotiation, and lead-generation coaching','Leads, marketing, referrals, and content support','Full file support from pre-approval through closing','Technology, systems, and AI tools','Leadership and team-building','Independence and flexibility','Compensation, benefits, and brand recognition','Building or bringing over a team','A better long-term fit'],type:'multi'},
+    {id:'lastSpoke',title:'When was the last time you spoke with someone at NEXA Mortgage?',opts:['I have not spoken with anyone','Within the last week','Within the last 30 days','Within the last 90 days','More than 90 days ago or I’m not sure']},
+    {id:'source',title:'Where did you first learn about NEXA Mortgage?',opts:['A person invited or told me','A Facebook or social post','A Google search or YouTube video','An AI search result or AI-generated answer','An article or website','I don’t remember']}
+  );if(answers.source==='A person invited or told me'){list.push({id:'sourceName',title:'What is the first and last name of the person who told you about NEXA?',type:'text',placeholder:'Name, if known',optional:true})}list.push({id:'contact',title:'Tell us where to send your review and meeting information',type:'contact'});return list}
+  function openTopic(k){const t=topics[k];document.getElementById('topicTitle').textContent=t.title;document.getElementById('topicBody').textContent=t.body;document.getElementById('topicAction').innerHTML='<button class="btn" style="margin-top:22px" onclick="openEval()">Continue to evaluation</button>';document.getElementById('topicModal').classList.add('open')}
+  function openEval(){closeModal();q=0;answers={};contact={};slot='';calendarOpen=false;document.getElementById('questionArea').style.display='block';document.querySelector('.panel-actions').style.display='flex';document.getElementById('nextBtn').textContent='Continue';document.getElementById('nextBtn').onclick=nextQuestion;renderQ();document.getElementById('evalModal').classList.add('open')}
+  function closeModal(){document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'))}
+  function renderQ(){const qs=getQs(),item=qs[q]||qs[qs.length-1],{title,opts=[],type,placeholder,optional}=item;document.getElementById('stepLabel').textContent=`Private evaluation · ${q+1} of ${qs.length}`;document.getElementById('bar').style.width=((q+1)/qs.length*100)+'%';let html='<h2 id="evalTitle">'+title+'</h2>';if(type==='contact'){html+='<div class="field-list"><label>First and last name<input id="fullName" autocomplete="name" placeholder="Your name"></label><label>Email address<input id="email" type="email" autocomplete="email" placeholder="you@example.com"></label><label>Mobile phone<input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 555-5555"></label><p class="micro" style="margin:0">Your meeting will be confirmed by SMS, so please provide a mobile number that receives text messages.</p><p id="formError" role="alert" style="color:var(--danger);font-size:13px;font-weight:700;margin:0"></p></div>'}else if(type==='text'){html+='<div class="field-list"><label>'+title+(optional?' <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span>':'')+'<input id="textAnswer" autocomplete="off" placeholder="'+(placeholder||'Your answer')+'"></label></div>'}else{const multi=type==='multi',selected=Array.isArray(answers[item.id])?answers[item.id]:[];const hint=item.hint||(multi?(item.id==='appeal'?'Choose up to 3':'Choose multiple'):'');html+=hint?'<p style="color:var(--sage);margin-top:-12px;font-size:13px">'+hint+'</p>':'';html+='<div class="choices">'+opts.map((o,i)=>`<button class="choice ${multi?selected.includes(o)?'selected':'' : answers[item.id]===o?'selected':''}" onclick="choose(${i})">${o}</button>`).join('')+'</div>'}document.getElementById('questionArea').innerHTML=html;document.getElementById('backBtn').style.visibility=q?'visible':'hidden';document.getElementById('nextBtn').style.display=(type==='multi'||type==='text'||type==='contact')?'inline-flex':'none';document.getElementById('nextBtn').textContent='Continue';document.getElementById('nextBtn').onclick=nextQuestion;document.getElementById('complete').classList.remove('show');if(type==='contact'){document.getElementById('fullName').value=contact.name||'';document.getElementById('email').value=contact.email||'';document.getElementById('phone').value=contact.phone||''}else if(type==='text'){document.getElementById('textAnswer').value=answers[item.id]||''}}
+  function choose(i){const qs=getQs(),item=qs[q],value=item.opts[i];if(item.type==='multi'){let selected=Array.isArray(answers[item.id])?[...answers[item.id]]:[];if(item.id==='appeal'&&!selected.includes(value)&&selected.length>=3){document.getElementById('questionArea').animate([{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}],{duration:180});return;}if(value==='All of the above'){selected=selected.length===item.opts.length-1?[]:item.opts.filter(x=>x!=='All of the above')}else{selected=selected.includes(value)?selected.filter(x=>x!==value):[...selected.filter(x=>x!=='All of the above'),value]}answers[item.id]=selected;renderQ();return}answers[item.id]=value;renderQ();setTimeout(nextQuestion,650)}
+  function saveText(item){const el=document.getElementById('textAnswer');if(!el)return true;const value=el.value.trim();if(!value&&!item.optional)return false;answers[item.id]=value;return true}
+  function saveContact(){const name=document.getElementById('fullName')?.value.trim(),email=document.getElementById('email')?.value.trim(),phone=document.getElementById('phone')?.value.trim(),error=document.getElementById('formError');const setError=(message)=>{if(error)error.textContent=message};setError('');if(!name||name.length<2){setError('Please enter your first and last name.');return false}if(!email||!/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/.test(email)){setError('Please enter a valid email address, such as name@example.com.');return false}const digits=phone.replace(/\D/g,'');const validPhone=/^(?:1)?[2-9]\d{2}[2-9]\d{6}$/.test(digits);if(!validPhone){setError('Please enter a valid 10-digit mobile phone number.');return false}contact={name,email,phone};return true}
+  function shake(){document.getElementById('questionArea').animate([{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}],{duration:180})}
+  function nextQuestion(){const qs=getQs(),item=qs[q];if(item.type==='contact'&&!saveContact()){shake();return}if(item.type==='text'&&!saveText(item)){shake();return}if(item.type==='multi'&&(!answers[item.id]||!answers[item.id].length)){shake();return}if(q<qs.length-1){q++;renderQ()}else{showCalendar()}}
+  function showCalendar(){calendarOpen=true;document.getElementById('stepLabel').textContent='Review meeting · following week';document.getElementById('bar').style.width='100%';document.getElementById('questionArea').innerHTML='<h2 id="evalTitle">Reserve a review conversation.</h2><p style="color:var(--sage)">Choose a provisional time for next week. We will review your answers first. If you are not an appropriate candidate for this presentation, the meeting will be canceled before it takes place.</p><div class="calendar"><button class="slot" onclick="pickSlot(this)" data-slot="Tuesday at 10:00 AM"><span>Tuesday<br><small>10:00 AM</small></span><strong>&rarr;</strong></button><button class="slot" onclick="pickSlot(this)" data-slot="Wednesday at 2:00 PM"><span>Wednesday<br><small>2:00 PM</small></span><strong>&rarr;</strong></button><button class="slot" onclick="pickSlot(this)" data-slot="Thursday at 4:30 PM"><span>Thursday<br><small>4:30 PM</small></span><strong>&rarr;</strong></button></div>';document.getElementById('backBtn').style.visibility='visible';document.getElementById('nextBtn').textContent='Reserve provisional meeting';document.getElementById('nextBtn').onclick=finishBooking}
+  function pickSlot(el){document.querySelectorAll('.slot').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');slot=el.dataset.slot}
+  function finishBooking(){if(!slot){document.getElementById('questionArea').animate([{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}],{duration:180});return}document.getElementById('questionArea').style.display='none';document.querySelector('.panel-actions').style.display='none';document.getElementById('complete').classList.add('show')}
+  function prevQuestion(){if(calendarOpen){calendarOpen=false;renderQ();return}if(q>0){q--;renderQ()}}
+  document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal()}));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
