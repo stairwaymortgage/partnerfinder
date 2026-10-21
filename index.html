@@ -403,6 +403,8 @@
     qs.forEach(item=>{const v=answers[item.id];if(item.type==='contact'||v===undefined||v===''||(Array.isArray(v)&&!v.length))return;out[ANSWER_LABELS[item.id]||item.id]=Array.isArray(v)?v.join('; '):v});
     const p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{if(p.get(k))out[k]=p.get(k)});
     out.landing_page=location.href;if(document.referrer)out.referrer=document.referrer;
+    /* Lead source + pages viewed, from the OneFocus script (t.js). */
+    if(window.OneFocus)out._of=window.OneFocus.attribution();
     return out;
   }
   function showSubmitError(msg){let e=document.getElementById('submitError');if(!e){e=document.createElement('p');e.id='submitError';e.setAttribute('role','alert');e.style.cssText='color:var(--danger);font-size:14px;font-weight:700;margin:18px 0 0';document.getElementById('questionArea').appendChild(e)}e.textContent=msg}
@@ -425,5 +427,6 @@
   /* Only the short topic popup closes on an outside click or Escape. The evaluation stays open until the visitor presses × (and resumes where they left off). */
   const topicModalEl=document.getElementById('topicModal');topicModalEl.addEventListener('click',e=>{if(e.target===topicModalEl)topicModalEl.classList.remove('open')});document.addEventListener('keydown',e=>{if(e.key==='Escape')topicModalEl.classList.remove('open')});
 </script>
+<script src="https://www.onefocuscrm.com/t.js" data-brand="pathfinder" defer></script>
 </body>
 </html>
